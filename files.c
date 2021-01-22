@@ -21,27 +21,27 @@ typedef struct book {
 } Book;
 
 void createBook() {
-    Book b[10] = {
-    for (i = 0; i < 10; i++){
+
+        Book b[1]; 
+
         printf ("\nIntroduce Book's Title:\n");
-            fgets (b[i].title, length, stdin);
+            fgets (b[1].title, length, stdin);
         printf ("\nIntroduce Book's Writer:\n");
-            fgets (b[i].writer, length, stdin);
+            fgets (b[1].writer, length, stdin);
         printf ("\nIntroduce Book's Publishing House:\n");
-            fgets (b[i].publishingHouse, length, stdin);
+            fgets (b[1].publishingHouse, length, stdin);
         printf ("\nIntroduce Book's Year:\n");
-            scanf("%d", &b[i].year);
+            scanf("%d", &b[1].year);
         printf ("\nIntroduce Book's ISBN:\n");
-            scanf("%ld", &b[i].ISBN);
+            scanf("%ld", &b[1].ISBN);
         printf ("\nIntroduce Book's pages:\n");
-            scanf("%d", &b[i].pages);
+            scanf("%d", &b[1].pages);
        while(getchar() != '\n'); // cleaning entry buffer
-        }
-    }
+
     
     FILE *pf = fopen(LIBRARY, "ab");
     if (pf) {
-        fwrite(b, sizeof(Book), 10, pf);
+        fwrite(b, sizeof(Book), 1, pf);
         fclose(pf);
     }
 }
